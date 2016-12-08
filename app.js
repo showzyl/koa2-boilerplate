@@ -9,11 +9,9 @@ const router = require('koa-router')();
 const logger = require('koa-logger');
 const assets = require('koa-static');
 const views = require('koa-views');
-const index = require('./router/index');
 const port = 3100;
 
 const app = new Koa();
-
 
 // middleware logger
 app.use(logger());
@@ -27,16 +25,10 @@ app.use(router.routes());
 // template engine
 app.use(views(__dirname + '/views', { map: {html: 'nunjucks' }}));
 
-//  Todo separate routes
-// console.log(index.allowedMethods);
-// router.use('/', index.routes(), index.allowedMethods());
-
-app.use(async function (ctx) {
-	await ctx.render('index', {
-		user: 'John'
-	});
+// all routes
+app.use(async (ctx, next) => {
+	await require('./routes/').routes()(ctx, next)
 });
-
 
 
 app.listen(port, () => {
