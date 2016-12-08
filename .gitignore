@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+node_modules
+.idea
+.idea/koa2-boilerplate.iml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/vcs.xml
+
