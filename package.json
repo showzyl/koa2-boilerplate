@@ -16,7 +16,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --harmony-async-await app.js"
+    "dev": "node app.js"
   },
   "author": "",
   "license": "ISC"
