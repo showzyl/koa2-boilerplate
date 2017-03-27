@@ -32,7 +32,7 @@ app.use(async (ctx, next) => {
 
 
 app.listen(port, () => {
-	console.log(`open 127.0.0.1:${port}`)
+	console.log(`open http://127.0.0.1:${port}`)
 });
 
 
